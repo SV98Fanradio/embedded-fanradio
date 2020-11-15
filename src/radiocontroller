@@ -16,7 +16,7 @@ start() {
 	git remote add -t main-v1 -f main-v1 https://github.com/SV98Fanradio/embedded-fanradio.git
 	git checkout main-v1
 	git pull
-	chmod u+x /emRadio/src/*.sh
+	chmod ugo+x /emRadio/src/*.sh
   else # update from branch
 	cd /emRadio/
 	git pull
