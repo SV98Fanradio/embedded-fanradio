@@ -1,0 +1,57 @@
+Setup instructions
+==================
+
+emRadio has been developed by Daniel Willumeit, SV 98 Fanradio. See the license file for licensing details and legal stuff.
+
+This software is meant to function as a small radio receiver, allowing to listen to the SV 98 fanradio using a Raspberry Pi. It uses some shell scripts to start up VLC and lets it play the stream.
+
+We provide an image for Raspberry Pi which is ready to use. All required software has been configured and installed. If you need to set it up manually for some reason, the following steps should be completed first.
+
+Required Software
+=================
+
+The following packages should be installed and activated:
+
+* ssh (for maintenance)
+* git
+* sox
+* mplayer
+* vlc
+
+Scripts
+=======
+
+Place the script "radiocontroller" in /etc/init.d/
+
+Set the exe flag by typing the following command as root:
+
+
+chmod u+x /etc/init.d/radiocontroller
+
+
+Then, configure the script to be run on startup:
+
+
+update-rc.d radiocontroller defaults
+
+
+That's it. To run the script, type the following command as root:
+
+
+/etc/init.d/radiocontroller start
+
+
+or simply reboot the device.
+
+Config changes
+==============
+
+Please note that the following config changes should be done manually in case the pre-configured image is not used:
+
+In /etc/dhcpcd.conf, add the following config directive to the file:
+
+
+timeout 3
+
+
+This will reduce the DHCP timeout to three seconds, resulting in a much faster boot if no ethernet is available.
