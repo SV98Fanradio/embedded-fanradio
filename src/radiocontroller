@@ -9,20 +9,29 @@
 ### END INIT INFO
 
 start() {
+
+  if [ ! -f /etc/emradio.conf]; then
+	touch /etc/emradio.conf
+	echo 'BRANCH="main-v1"' >> /etc/emradio.conf
+  fi
+  source /etc/emradio.conf
+
   if [ ! -d "/emRadio/" ]; then # init dir if not done yet
 	mkdir /emRadio/
 	cd /emRadio/
 	git init
-	git remote add -t main-v1 -f main-v1 https://github.com/SV98Fanradio/embedded-fanradio.git
-	git checkout main-v1
+	git remote add -t $BRANCH -f $BRANCH https://github.com/SV98Fanradio/embedded-fanradio.git
+	git checkout $BRANCH
 	git pull
 	chmod ugo+x /emRadio/src/*.sh
-  else # update from branch
+else # update from branch
 	cd /emRadio/
 	git pull
-  fi
-  cd /emRadio/src/
-  sudo -u pi /emRadio/src/radio_init.sh &
+fi
+# run and update init scripts
+cd /emRadio/src/
+sudo -u pi /emRadio/src/radio_init.sh &
+cp /emRadio/src/radiocontroller /etc/init.d/
 }
 
 stop() {
