@@ -23,11 +23,11 @@ start() {
 	git remote add -t $BRANCH -f $BRANCH https://github.com/SV98Fanradio/embedded-fanradio.git
 	git checkout $BRANCH
 	git pull
-	chmod ugo+x /emRadio/src/*.sh
 else # update from branch
 	cd /emRadio/
 	git pull
 fi
+chmod ugo+x /emRadio/src/*.sh
 # run and update init scripts
 cd /emRadio/src/
 sudo -u pi /emRadio/src/radio_init.sh &
