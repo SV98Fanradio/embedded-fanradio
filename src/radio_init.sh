@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "DEV"
+
 /usr/bin/play ../audio/hello.wav >/dev/null 2>&1
 /usr/bin/play ../audio/checking_onemoment.wav >/dev/null 2>&1
 
