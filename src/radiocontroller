@@ -1,20 +1,20 @@
 #!/bin/bash
 ### BEGIN INIT INFO
-# Provides:          fanRADIO
+# Provides:          emRadio
 # Required-Start:    $local_fs $network $named $time $syslog
 # Required-Stop:     $local_fs $network $named $time $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Description:       fanRADIO
+# Description:       emRadio
 ### END INIT INFO
 
 start() {
 
-  if [ ! -f /etc/emradio.conf ]; then
-	touch /etc/emradio.conf
+  if [ ! -f /etc/emRadio.conf ]; then
+	touch /etc/emRadio.conf
 	echo 'BRANCH="main-v1"' >> /etc/emradio.conf
   fi
-  source /etc/emradio.conf
+  source /etc/emRadio.conf
 
   if [ ! -d "/emRadio/" ]; then # init dir if not done yet
 	mkdir /emRadio/
