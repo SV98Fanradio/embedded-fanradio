@@ -12,7 +12,7 @@ start() {
 
   if [ ! -f /etc/emRadio.conf ]; then
 	touch /etc/emRadio.conf
-	echo 'BRANCH="main-v1"' >> /etc/emradio.conf
+	echo 'BRANCH="main-v1"' >> /etc/emRadio.conf
   fi
   source /etc/emRadio.conf
 
