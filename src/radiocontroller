@@ -25,6 +25,8 @@ start() {
 	git pull
 else # update from branch
 	cd /emRadio/
+	git remote add -t $BRANCH -f $BRANCH https://github.com/SV98Fanradio/embedded-fanradio.git
+	git checkout $BRANCH
 	git pull
 fi
 chmod ugo+x /emRadio/src/*.sh
