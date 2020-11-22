@@ -36,6 +36,7 @@ chmod ugo+x /emRadio/src/*.sh
 cd /emRadio/src/
 sudo -u pi /emRadio/src/radio_init.sh &
 cp /emRadio/src/radiocontroller /etc/init.d/
+rsync -avh --delete /emRadio/src/www/ /var/www/html/
 }
 
 stop() {
