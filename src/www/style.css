@@ -1,0 +1,63 @@
+.maintable
+{
+	border:0;
+	width:100%;
+	height:100%;
+	border-spacing: 0px;
+	border-collapse: separate;
+}
+.mainheader
+{
+	text-align:left;
+	background-color:#014890;
+	font-size:12px;
+	font-weight: bold;
+	vertical-align:bottom;
+}
+.frlogo
+{
+	max-height:100px;
+	max-width:100px
+}
+.logotd
+{
+		width:100px;
+}
+a.headerlink:link,a.headerlink:visited,a.headerlink:active {
+  color: #ffffff;
+}
+a:hover {
+  color: hotpink;
+}
+.gridtable
+{
+	/*width:100%;*/
+	height:100%;
+	border-spacing: 0px;
+	border-collapse: separate;
+}
+.gridtd
+{
+	border: 1px solid black;
+}
+.gridheader
+{
+	font-size:10px;
+	font-weight: bold;
+	text-align: center;
+}
+.gridbody
+{
+	font-size:10px;
+	text-align: left;
+}
+.onlinestring
+{
+	color: green;
+	display: inline-block;
+}
+.offlinestring
+{
+	color: red;
+	display: inline-block;
+}

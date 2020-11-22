@@ -17,6 +17,9 @@ The following packages should be installed and activated:
 * sox
 * mplayer
 * vlc
+* apache2
+* php7.2
+* php7.2-curl
 
 Scripts
 =======
@@ -43,8 +46,8 @@ That's it. To run the script, type the following command as root:
 
 or simply reboot the device.
 
-Config changes
-==============
+Config changes and other stuff
+==============================
 
 Please note that the following config changes should be done manually in case the pre-configured image is not used:
 
@@ -55,3 +58,5 @@ timeout 3
 
 
 This will reduce the DHCP timeout to three seconds, resulting in a much faster boot if no ethernet is available.
+
+Also, please remove index.html from /var/www/html. It's replaced by index.php which will be installed by the init scripts upon the first run
