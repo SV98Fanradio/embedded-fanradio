@@ -72,11 +72,12 @@ switch ($vlcstatebuffer)
 	<tr class="mainheader">
 	<td class="logotd"><img src="fr_logo_trans.png" class="frlogo"></td>
 	<td>
-		<?php include("header.php"); ?>
+		<?php include("header-left.php"); ?>
 	</td>
+	<td align="right"><?php include("header-right.php"); ?></td>
 	</tr>
 	<tr>
-	<td colspan="2">
+	<td colspan="3">
 	<table class="gridtable">
 		<tr>
 			<td class="gridtd"><div class="gridheader">Netzwerkstatus</div><br>
